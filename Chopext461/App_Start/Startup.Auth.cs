@@ -47,8 +47,8 @@ namespace Chopext461
 
             // Uncomment the following lines to enable logging in with third party login providers
             app.UseMicrosoftAccountAuthentication(
-                clientId: "",
-                clientSecret: "");
+                clientId: System.Configuration.ConfigurationManager.AppSettings["client_id"],
+                clientSecret: System.Configuration.ConfigurationManager.AppSettings["client_secret"]);
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
