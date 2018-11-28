@@ -47,8 +47,8 @@ namespace Chopext461
 
             // Uncomment the following lines to enable logging in with third party login providers
             app.UseMicrosoftAccountAuthentication(
-                clientId: System.Configuration.ConfigurationManager.AppSettings["client_id"],
-                clientSecret: System.Configuration.ConfigurationManager.AppSettings["client_secret"]);
+                clientId: System.Configuration.ConfigurationManager.AppSettings["ms_client_id"],
+                clientSecret: System.Configuration.ConfigurationManager.AppSettings["ms_client_secret"]);
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
@@ -58,11 +58,11 @@ namespace Chopext461
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = System.Configuration.ConfigurationManager.AppSettings["google_client_id"],
+                ClientSecret = System.Configuration.ConfigurationManager.AppSettings["google_client_secret"]
+            });
         }
     }
 }
